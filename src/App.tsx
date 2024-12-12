@@ -15,6 +15,7 @@ function App() {
             <Route path={"leads"} element={<PageNotFound />} />
             <Route path="form-summary" element={<FormSubmission />} />
           </Route>
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </GlobalStateProvider>
