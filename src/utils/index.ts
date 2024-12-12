@@ -1,16 +1,16 @@
 export type QuestionType = "multipleChoice" | "freeText";
 
-export interface Question {
+export type Question = {
   id: number;
   type: QuestionType;
   text: string;
   options: string[];
   qualifyingAnswers: string[];
-}
+};
 
-export interface State {
+export type State = {
   questions: Question[];
-}
+};
 
 export type Action =
   | { type: "ADD_QUESTION" }
@@ -50,3 +50,12 @@ export type Action =
         qualifyingAnswers: string[];
       };
     };
+
+export type GlobalStateContextType = {
+  state: State;
+  dispatch: React.Dispatch<Action>;
+};
+
+export type GlobalStateProviderProps = {
+  children: React.ReactNode;
+};
